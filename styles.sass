@@ -1,0 +1,165 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')    
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')
+
+// # Colors
+// ## Primary
+    
+$clr-dark-cyan: hsl(158, 36%, 37%)
+$clr-cream: hsl(30, 38%, 92%)
+
+// ## Neutral
+
+$clr-very-dark-blue: hsl(212, 21%, 14%)
+$clr-dark-greyish-blue: hsl(228, 12%, 48%)
+$clr-white: hsl(0, 0%, 100%)
+
+// # Typography
+
+//  ## Body Copy
+
+$font-size-paragraph: 14px
+
+// ## Font
+
+// - Family: [Montserrat](https://fonts.google.com/specimen/Montserrat)
+// - Weights: 500, 700
+$font-family-main: 'Montserrat'
+
+// - Family: [Fraunces](https://fonts.google.com/specimen/Fraunces)
+// - Weights: 700
+
+$font-family-head: 'Fraunces'
+$font-head: bold 3rem 'Fraunces'
+
+
+// Breakpoints
+
+$width-medium: 600px
+
+html
+    font-size: $font-size-paragraph
+    font-family: $font-family-main
+
+body
+    background-color: $clr-cream
+    color: $clr-dark-greyish-blue
+
+    height: 98dvh
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+    .product-container
+
+        max-width: clamp(600px, 60%, 100%)
+        max-height: 100%
+
+        display: grid
+        grid-template-columns: 1fr 1fr
+
+
+
+        background-color: $clr-white
+
+        border-radius: 1rem
+        overflow: hidden
+
+        .product-image-mobile
+                display: none
+                filter: saturate(200%)
+                width: 100%
+                
+        .product-image-desktop
+            width: 100%
+            height: 100%
+
+            filter: saturate(200%)
+
+        .product-content
+
+            margin: 3rem
+            display: grid
+            grid-template-rows: 10% 1fr 1fr 20% 10%
+
+            .product-category   
+                font-weight: 500
+
+                text-transform: uppercase 
+
+            .product-title
+                font: $font-head
+                line-height: 3rem
+                color: $clr-very-dark-blue
+
+            .product-description
+                font-weight: 500
+                line-height: 1.75rem 
+                align-self: center
+
+            .product-price
+                display: grid
+                grid-template-columns: 1fr 1fr
+                align-items: center
+                justify-items: center
+
+
+                .product-price-current
+                    font: $font-head
+                    color: $clr-dark-cyan  
+
+                .product-price-original
+                    text-decoration: line-through
+                    font-weight: 500
+                    
+            
+            button.product-add-to-card
+                background: $clr-dark-cyan
+                color: $clr-white
+
+                font-weight: 700
+
+                width: 100%
+                padding: .5rem
+
+                border: none
+                border-radius: .5rem
+
+                &:hover
+                    cursor: pointer
+                    background-color: darken($clr-dark-cyan, 15%)
+
+                .product-add-to-card-content
+                    display: flex
+                    align-content: center
+                    justify-content: center
+
+                    img
+                        margin-inline: 1rem
+
+        @media screen and (max-width: $width-medium)
+
+            display: block
+
+            max-width: 100%
+            height: 100%
+
+            margin: 1rem
+
+
+            .product-image-mobile
+                display: block
+                max-height: 100%
+            
+            .product-image-desktop
+                display: none
+
+            .product-content
+                margin: 1rem
+
+                grid-template-rows: 20% 30% 40% 30% 20%
+
+                .product-title
+                    font-size: 2rem
+                    line-height: 2rem

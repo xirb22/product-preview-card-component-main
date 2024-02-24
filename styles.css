@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+html {
+  font-size: 14px;
+  font-family: "Montserrat";
+}
+
+body {
+  background-color: hsl(30, 38%, 92%);
+  color: hsl(228, 12%, 48%);
+  height: 98dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .product-container {
+  max-width: clamp(600px, 60%, 100%);
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+body .product-container .product-image-mobile {
+  display: none;
+  filter: saturate(200%);
+  width: 100%;
+}
+body .product-container .product-image-desktop {
+  width: 100%;
+  height: 100%;
+  filter: saturate(200%);
+}
+body .product-container .product-content {
+  margin: 3rem;
+  display: grid;
+  grid-template-rows: 10% 1fr 1fr 20% 10%;
+}
+body .product-container .product-content .product-category {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+body .product-container .product-content .product-title {
+  font: bold 3rem "Fraunces";
+  line-height: 3rem;
+  color: hsl(212, 21%, 14%);
+}
+body .product-container .product-content .product-description {
+  font-weight: 500;
+  line-height: 1.75rem;
+  align-self: center;
+}
+body .product-container .product-content .product-price {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+body .product-container .product-content .product-price .product-price-current {
+  font: bold 3rem "Fraunces";
+  color: hsl(158, 36%, 37%);
+}
+body .product-container .product-content .product-price .product-price-original {
+  text-decoration: line-through;
+  font-weight: 500;
+}
+body .product-container .product-content button.product-add-to-card {
+  background: hsl(158, 36%, 37%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+body .product-container .product-content button.product-add-to-card:hover {
+  cursor: pointer;
+  background-color: #244c3d;
+}
+body .product-container .product-content button.product-add-to-card .product-add-to-card-content {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+body .product-container .product-content button.product-add-to-card .product-add-to-card-content img {
+  margin-inline: 1rem;
+}
+@media screen and (max-width: 600px) {
+  body .product-container {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    margin: 1rem;
+  }
+  body .product-container .product-image-mobile {
+    display: block;
+    max-height: 100%;
+  }
+  body .product-container .product-image-desktop {
+    display: none;
+  }
+  body .product-container .product-content {
+    margin: 1rem;
+    grid-template-rows: 20% 30% 40% 30% 20%;
+  }
+  body .product-container .product-content .product-title {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
